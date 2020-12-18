@@ -1,0 +1,6 @@
+type Plant {
+    id: ID!
+    name: String
+    location: Location
+    health: Int
+}

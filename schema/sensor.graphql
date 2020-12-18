@@ -1,0 +1,12 @@
+type Sensor {
+    id: ID!
+    location: Location
+    type: SENSOR_TYPE!
+}
+
+enum SENSOR_TYPE {
+    BRIGHTNESS
+    CONDUCTIVITY
+    MOISTURE
+    TEMPERATURE
+}
