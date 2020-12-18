@@ -40,6 +40,7 @@ At that point, the user can just enjoy the information or act on it and provide 
 
 In the next section we'll take a look at the exact data models but the overarching architecture of our application should look along the following lines:
 
+```
 +-------+     +--------------+                   +-----+     +---------+
 | Plant | ==> | Measurements | == IoT Sensor ==> | API | ==> | Storage |
 +-------+     +--------------+                   +-----+     +---------+
@@ -47,6 +48,7 @@ In the next section we'll take a look at the exact data models but the overarchi
 +---------+     +--------------+     +------+                   +--------+
 | Storage | ==> | Presentation | ==> | User | == (if needed)==> | Action |
 +---------+     +--------------+     +------+                   +--------+
+```
 
 In this architecture we can denote 3 distinct zones of operation: plant, platform, consumer.
 
