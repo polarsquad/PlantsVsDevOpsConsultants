@@ -1,0 +1,38 @@
+syntax = "proto3";
+package v1;
+
+import "google/protobuf/timestamp.proto";
+
+enum Type {
+    BRIGHTNESS = 0;
+    CONDUCTIVITY = 1;
+    MOISTURE = 2;
+    TEMPERATURE = 3;
+}
+
+message Measurement {
+    Type type = 1;
+    double value = 2;
+    google.protobuf.timestamp ts = 3;
+    uint64 sensor = 4;
+}
+
+message MeasurementResponse {
+    Type type = 1;
+    google.protobuf.timestamp ts = 2;
+    uint64 sensor = 3;
+}
+
+message CreateMeasurementRequest {
+    string api = 1;
+    Measurement measurement = 2;
+}
+
+message CreateMeasurementResponse {
+    string api = 1;
+    MeasurementResponse measurementResponse = 2;
+}
+
+service MeasurementService {
+    rpc Create(CreateMeasurementRequest) returns (CreateMeasurementResponse);
+}

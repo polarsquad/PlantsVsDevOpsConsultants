@@ -1,5 +1,4 @@
 type Temperature implements Measurement {
-    id: ID!
     value: Float!
     timestamp: Date!
     plants: [Plant]
