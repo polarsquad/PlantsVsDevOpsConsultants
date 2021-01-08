@@ -1,6 +1,8 @@
 syntax = "proto3";
 package v1;
 
+option go_package = "github.com/polarsquad/PlantsVsDevOpsConsultants/platform";
+
 import "google/protobuf/timestamp.proto";
 
 enum Type {
@@ -13,13 +15,13 @@ enum Type {
 message Measurement {
     Type type = 1;
     double value = 2;
-    google.protobuf.timestamp ts = 3;
+    google.protobuf.Timestamp ts = 3;
     uint64 sensor = 4;
 }
 
 message MeasurementResponse {
     Type type = 1;
-    google.protobuf.timestamp ts = 2;
+    google.protobuf.Timestamp ts = 2;
     uint64 sensor = 3;
 }
 
