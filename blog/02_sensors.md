@@ -26,7 +26,7 @@ The actual amount and ratio between the three is yet again dependent on the plan
 
 ## Temperature
 
-Tampere is the Sauna Capital of Finland, but our office temperature is somewhere around 21 degrees Celsius. This is just a guess before we actually measure it.
+Tampere is the Sauna Capital of Finland, but our office temperature is somewhere around 22 degrees Celsius. This is just a guess before we actually measure it.
 
 We're in some control of this, since we can poke the air control unit, but we're not sure how happy too much fiddling around will make our landlord. There's also people at the office in addition to plants, so we can't forget the consultants either.
 
@@ -54,6 +54,8 @@ There's other factors involved, such as soil texture and the position of the moo
 
 Luckily, the lovely people at Xiaomi have built a device for the occasion. There seem to be many varieties, some under the VegTrug brand. Seems to be pretty much the same device though.
 
+![Devices](images/devices.jpg)
+
 All of these sticks are put in the pots next to the plants and gather all of the data needed:
 
 - Moisture (%)
@@ -62,7 +64,13 @@ All of these sticks are put in the pots next to the plants and gather all of the
 - Illuminance (lux)
 - Battery (%)
 
+![Sensor](images/sensor.jpg)
+
 They work as Bluetooth GATT servers, so you're able to connect and read the data. GATT, or Generic Attribute Profile defines how two Bluetooth Low Energy devices can talk to each other. The clients, called Centrals, connect to the servers or Peripherals and write and read Characteristics.
+
+You can talk to the devices with a dedicated [application](https://play.google.com/store/apps/details?id=com.huahuacaocao.vegtrug&hl=en&gl=US), but we'll create our own as we want the monitoring to be 24/7 rather than just when we happen to be at the office.
+
+![App](images/vegtrug_app.png)
 
 Another idea that we had, would be to go a little deeper into the DIY sector and use some more generic sensors connected to an Arduino or a Raspberry Pi. But we have decided to go a different route this time, since time is of the essence!
 
