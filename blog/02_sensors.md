@@ -2,33 +2,35 @@
 
 Welcome to our blog series in which a group of DevOps Consultants from Polar Squad try their hardest at applying DevOps principles in an effort to keep the plants alive.
 
-By the last consensus calculation, we still have 31 plants at the office. A few of them look a bit dry, so we must get this system up and running as soon as possible!
+By the last consensus calculation, we still have 31 (still) plants at the office. A few of them look a bit dry, so we must get this system up and running as soon as possible!
 
-There's a few plant parameters that we are particularly interested in.
+## Key Plant Indicators
 
-## Amount of light
+There are a few plant parameters that we are particularly interested in.
+
+### Amount of light
 
 Since we're located in Tampere, somewhere around 61 degrees north the amount of natural light is highly dependend on the time of year. At the time of writing, the Sun goes down at 15:26.
 
 Our office lighting is a bit fiddly and turns off automatically. We're not entirely sure about the suitability of generic office lights for plants either. They predominantly use 400 - 700 nm for photosynthesis, but a natural white light would be best overall.
 
-## Humidity
+### Humidity
 
 Plants need water to survive. We should actually measure the moisture of the soil as well as the humidity of the surrounding air.
 
 We're currently in more control of the amount of water the plants get from the soil, so we're going to concentrate on that.
 
-## Fertility of the soil
+### Fertility of the soil
 
 In addition to light and water, plants need nutrients such as nitrate, phosphorus and potassium. These three are denoted by the N-P-K values in boxes and bottles of plant fertilizer.
 
 The actual amount and ratio between the three is yet again dependent on the plant. Naturally, the time of year has a large effect too.
 
-## Temperature
+### Temperature
 
 Tampere is the Sauna Capital of Finland, but our office temperature is somewhere around 22 degrees Celsius. This is just a guess before we actually measure it.
 
-We're in some control of this, since we can poke the air control unit, but we're not sure how happy too much fiddling around will make our landlord. There's also people at the office in addition to plants, so we can't forget the consultants either.
+We're in some control of this, since we can poke the air control unit, but we're not sure how happy too much fiddling around will make our landlord. There are also people at the office in addition to plants, so we can't forget the consultants either.
 
 ## Gathering the data
 
@@ -46,15 +48,15 @@ Again, the amount depends largely on the plant and also the time of year. During
 
 Fertility is a bit harder than that of the others, but similarly to moisture measurements can be deduced from other factors. In this case, the electrical conductivity (S/m, siemens / meter) of the soil. For this particular instance, hopefully it's in the microsiemens range though. pH of the soil is another indicator of nutrient availability.
 
-At this point, it should come as no surprise that the desired temperature depends on the plant too. Since our office plants aren't exactly native to Finland, they need a bit more warmth than the ones outside. As for measuring temperature, there's may ways to do it from looking at mercury expanding in a glass tube to sniffing infrared. Or an electrical component called thermistor whose resistance depends on the temperature.
+At this point, it should come as no surprise that the desired temperature depends on the plant too. Since our office plants aren't exactly native to Finland, they need a bit more warmth than the ones outside. As for measuring temperature, there's many ways to do it from looking at mercury expanding in a glass tube to sniffing infrared. Or an electrical component called thermistor whose resistance depends on the temperature.
 
-There's other factors involved, such as soil texture and the position of the moon, but we're feeling confident that by measuring the above we can keep our plants alive.
+There are other factors involved, such as soil texture and the position of the moon, but we're feeling confident that by measuring the above we can keep our plants alive.
 
 ### Sensors
 
 Luckily, the lovely people at Xiaomi have built a device for the occasion. There seem to be many varieties, some under the VegTrug brand. Seems to be pretty much the same device though.
 
-![Devices](images/devices.jpg)
+![Sensor](images/sensor.jpg)
 
 All of these sticks are put in the pots next to the plants and gather all of the data needed:
 
@@ -64,18 +66,20 @@ All of these sticks are put in the pots next to the plants and gather all of the
 - Illuminance (lux)
 - Battery (%)
 
-![Sensor](images/sensor.jpg)
-
 They work as Bluetooth GATT servers, so you're able to connect and read the data. GATT, or Generic Attribute Profile defines how two Bluetooth Low Energy devices can talk to each other. The clients, called Centrals, connect to the servers or Peripherals and write and read Characteristics.
-
-You can talk to the devices with a dedicated [application](https://play.google.com/store/apps/details?id=com.huahuacaocao.vegtrug&hl=en&gl=US), but we'll create our own as we want the monitoring to be 24/7 rather than just when we happen to be at the office.
 
 ![App](images/vegtrug_app.png)
 
-Another idea that we had, would be to go a little deeper into the DIY sector and use some more generic sensors connected to an Arduino or a Raspberry Pi. But we have decided to go a different route this time, since time is of the essence!
+You can talk to the devices with a dedicated [application](https://play.google.com/store/apps/details?id=com.huahuacaocao.vegtrug&hl=en&gl=US), but we'll create our own as we want the monitoring to be 24/7 rather than just when we happen to be at the office.
+
+Another idea that we had, would be to go a little deeper into the DIY sector and use some more generic sensors connected to an Arduino or a Raspberry Pi.
+
+But we have decided to go a different route this time since it is of the essence!
 
 ## Conclusion
 
 In true DevOps fashion, the ultimate goal is to automate everything. For now, we're happy if the plants are happy and are prepared to do some manual labor in terms of watering and fertilizing. Think of it as a moment of zen in the hectic world of debugging clusters, building pipelines and deploying microservices.
 
-So, the next step is to get some sensors in the plant pots and the measurements flowing to the platform described in part 1. Some coding involved too, so let's get cracking.
+So, the next step is to get the measurements flowing from the plant pots to the platform described in part 1.
+
+Some coding involved too, so let's get cracking!
